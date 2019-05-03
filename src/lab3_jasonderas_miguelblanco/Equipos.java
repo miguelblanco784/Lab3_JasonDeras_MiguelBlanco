@@ -53,6 +53,10 @@ public class Equipos {
         return jugadores;
     }
 
+    public void setJugador(Jugador j) {
+        jugadores.add(j);
+    }
+
     public void setJugadores(ArrayList<Jugador> jugadores) {
         this.jugadores = jugadores;
     }
