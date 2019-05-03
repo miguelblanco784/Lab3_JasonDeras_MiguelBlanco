@@ -3,11 +3,12 @@ package lab3_jasonderas_miguelblanco;
 import java.util.*;
 
 public class Equipos {
-private String nombre;
-private String palamares;
-private String ciudad;
-private double presupuesto;
-private ArrayList<Jugador>jugadores=new ArrayList();
+
+    private String nombre;
+    private String palamares;
+    private String ciudad;
+    private double presupuesto;
+    private ArrayList<Jugador> jugadores = new ArrayList();
 
     public Equipos(String nombre, String palamares, String ciudad, double presupuesto) {
         this.nombre = nombre;
