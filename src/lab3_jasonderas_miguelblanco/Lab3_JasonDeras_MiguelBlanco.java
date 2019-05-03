@@ -65,7 +65,34 @@ public class Lab3_JasonDeras_MiguelBlanco {
                             System.out.println("");
                             break;
                         case 2:
+                            System.out.println("Ingrese su formacion: "
+                                    + "Ejemplo: defensas,medios,delanteros");
+                            String temp9 = leer.next();
+                            String[] formacion = temp9.split(",");
+                            int opcion11 = Integer.parseInt(formacion[2]),
+                             opcion22 = Integer.parseInt(formacion[1]),
+                             opcion33 = Integer.parseInt(formacion[0]);
+                            int opcion1 = 0,
+                             opcion2 = 0,
+                             opcion3 = 0;
+                            for (int i = 0; i < equipos.size(); i++) {
+                                if (equipos.get(i).getJugadores().get(i) instanceof Delantero) {
+                                    opcion1++;
+                                }
+                            }
+                            for (int i = 0; i < equipos.size(); i++) {
+                                if (equipos.get(i).getJugadores().get(i) instanceof Medio) {
+                                    opcion2++;
+                                }
+                            }
+                            for (int i = 0; i < equipos.size(); i++) {
+                                if (equipos.get(i).getJugadores().get(i) instanceof Defensa) {
+                                    opcion3++;
+                                }
+                            }
+                            if ((opcion11 >= opcion1) && (opcion22 >= opcion2) && (opcion33 >= opcion3)) {
 
+                            }
                             break;
                         case 3:
 
