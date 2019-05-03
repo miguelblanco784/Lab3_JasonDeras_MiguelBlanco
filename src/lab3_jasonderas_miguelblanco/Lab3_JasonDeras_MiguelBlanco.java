@@ -41,6 +41,17 @@ public class Lab3_JasonDeras_MiguelBlanco {
                         case 5:
 
                             break;
+                        case 6:
+                            System.out.print("Ingrese su el nombre del equipo: ");
+                            String nomequipo = leer.next();
+                            System.out.print("Ingrese Palmares: ");
+                            int palmares = leer.nextInt();
+                            System.out.print("Ingrese Ciudad: ");
+                            String ciudad = leer.next();
+                            System.out.print("Ingrese presupuesto: ");
+                            double presupuesto = leer.nextInt();
+                            equipos.add(new Equipos(nomequipo, palmares, ciudad, presupuesto));
+                            break;
                         default:
                             throw new AssertionError();
                     }
