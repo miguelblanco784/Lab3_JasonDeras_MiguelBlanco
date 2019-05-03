@@ -27,7 +27,32 @@ public class Lab3_JasonDeras_MiguelBlanco {
                     int temp1 = leer.nextInt();
                     switch (temp1) {
                         case 1:
+                            for (int i = 0; i < equipos.size(); i++) {
+                                System.out.println(i + 1 + "- " + equipos.get(i));
+                            }
 
+                            System.out.print("Ingrese posicion del equipo a comprar: ");
+                            int temp7 = leer.nextInt() - 1;
+                            for (int i = 0; i < jugadoress.size(); i++) {
+                                if (jugadoress.get(i).getEquipo().equals("Libre")) {
+                                    System.out.println(i + "= " + jugadoress.get(i));
+                                }
+                            }
+                            System.out.print("Ingrese la posicion del jugador a comprar: ");
+                            int temp8 = leer.nextInt();
+
+                            if ((jugadoress.get(temp8).getPrecio() > equipos.get(temp7).getPresupuesto()) && jugadoress.get(temp8).getEquipo().equals("Libre")) {
+                                System.out.println("No lo puede comprar\n");
+                            } else if ((jugadoress.get(temp8).getPrecio() < equipos.get(temp7).getPresupuesto()) && jugadoress.get(temp8).getEquipo().equals("Libre")) {
+                                int axu;
+                                axu = (int) (equipos.get(temp7).getPresupuesto() - jugadoress.get(temp8).getPrecio());
+                                equipos.get(temp7).setPresupuesto(axu);
+                            } else if ((jugadoress.get(temp8).getPrecio() == equipos.get(temp7).getPresupuesto()) && jugadoress.get(temp8).getEquipo().equals("Libre")) {
+                                int axu;
+                                axu = (int) (equipos.get(temp8).getPresupuesto() - jugadoress.get(temp8).getPrecio());
+                                equipos.get(temp7).setPresupuesto(axu);
+                            }
+                            System.out.println("");
                             break;
                         case 2:
 
@@ -54,7 +79,7 @@ public class Lab3_JasonDeras_MiguelBlanco {
                                 System.out.print(i + 1 + "- " + equipos.get(i));
                             }
                             System.out.print("Ingrese el equipo que desea eliminiar: ");
-                            int temp6 = leer.nextInt();
+                            int temp6 = leer.nextInt() - 1;
                             equipos.remove(temp6);
                             break;
                         case 6:
