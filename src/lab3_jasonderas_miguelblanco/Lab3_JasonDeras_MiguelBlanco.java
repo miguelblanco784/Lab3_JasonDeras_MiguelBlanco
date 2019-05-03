@@ -91,9 +91,48 @@ public class Lab3_JasonDeras_MiguelBlanco {
                                     opcion3++;
                                 }
                             }
-                            if ((opcion11 >= opcion1) && (opcion22 >= opcion2) && (opcion33 >= opcion3)) {
+                            if ((opcion11 >= opcion1) && (opcion22 >= opcion2) && (opcion33 >= opcion3) && (opcion11 + opcion22 + opcion33 == 10)) {
+                                System.out.println("Delanteros: ");
+                                for (int i = 0; i < equipos.size(); i++) {
+                                    if (equipos.get(i).getJugadores().get(i) instanceof Delantero) {
+                                        System.out.println(i + "_ " + equipos.size());
+                                    }
+                                }
+                                System.out.println("Medios: ");
+                                for (int i = 0; i < equipos.size(); i++) {
+                                    if (equipos.get(i).getJugadores().get(i) instanceof Medio) {
+                                        System.out.println(i + "_ " + equipos.size());
+                                    }
+                                }
+                                System.out.println("Defensa ");
+                                for (int i = 0; i < equipos.size(); i++) {
+                                    if (equipos.get(i).getJugadores().get(i) instanceof Defensa) {
+                                        System.out.println(i + "_ " + equipos.size());
+                                    }
+                                }
+                                Object[] jugadoress = new Object[2];
+                                Object[] temp10 = new Object[10];
+                                ArrayList banca = new ArrayList();
+                                jugadoress[0] = temp10;
+                                jugadoress[1] = banca;
+                                for (int i = 0; i < 10; i++) {
+                                    System.out.println("Ingrese sus delanteros: ");
+                                    for (int p = 0; p < opcion11; p++, i++) {
+                                        System.out.println("Ingrese el delantero -" + i);
+                                        
+                                    }
+                                    System.out.println("Ingrese sus Medio: ");
+                                    for (int k = 0; k < opcion22; k++, i++) {
+                                        System.out.println("Ingrese sus Medio -" + i);
+                                    }
+                                    System.out.println("Ingrese Defensa: ");
+                                    for (int z = 0; z < opcion33; z++, i++) {
+                                        System.out.println("Ingrese sus Defensas -" + i);
+                                    }
+                                }
 
-                            }
+                                Titulares.add(jugadoress);
+                            }// fin if validacion 
                             break;
                         case 3:
 
