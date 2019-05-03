@@ -8,6 +8,7 @@ public class Lab3_JasonDeras_MiguelBlanco {
     static Scanner leer = new Scanner(System.in);
     static ArrayList<Jugador> jugadoress = new ArrayList();
     static ArrayList<Equipos> equipos = new ArrayList();
+    static ArrayList Titulares = new ArrayList();
 
     public static void main(String[] args) {
         while (true) {
