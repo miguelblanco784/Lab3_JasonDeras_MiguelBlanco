@@ -36,10 +36,26 @@ public class Lab3_JasonDeras_MiguelBlanco {
 
                             break;
                         case 4:
-
+                            System.out.println("Jugadores en equipos: ");
+                            for (int i = 0; i < jugadoress.size(); i++) {
+                                if (jugadoress.get(i).getEquipo().equals("Comprado")) {
+                                    System.out.println(jugadoress.get(i));
+                                }
+                            }
+                            System.out.println("Jugadores sin equipo: ");
+                            for (int i = 0; i < jugadoress.size(); i++) {
+                                if (jugadoress.get(i).getEquipo().equals("Libre")) {
+                                    System.out.println(jugadoress.get(i));
+                                }
+                            }
                             break;
                         case 5:
-
+                            for (int i = 0; i < equipos.size(); i++) {
+                                System.out.print(i + 1 + "- " + equipos.get(i));
+                            }
+                            System.out.print("Ingrese el equipo que desea eliminiar: ");
+                            int temp6 = leer.nextInt();
+                            equipos.remove(temp6);
                             break;
                         case 6:
                             System.out.print("Ingrese su el nombre del equipo: ");
@@ -226,6 +242,9 @@ public class Lab3_JasonDeras_MiguelBlanco {
                             }//Fin del switch de modificacion de jugador
                             break;
                         case 3:
+                            for (int i = 0; i < jugadoress.size(); i++) {
+                                System.out.println(i + 1 + "- " + jugadoress.get(i));
+                            }
                             System.out.print("Ingrese que jugador dese eliminar: ");
                             int temp3 = leer.nextInt() - 1;
                             jugadoress.remove(temp3);
