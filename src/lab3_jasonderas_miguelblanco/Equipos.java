@@ -5,12 +5,12 @@ import java.util.*;
 public class Equipos {
 
     private String nombre;
-    private int palamares;
+    private String palamares;
     private String ciudad;
     private double presupuesto;
     private ArrayList<Jugador> jugadores = new ArrayList();
 
-    public Equipos(String nombre, int palamares, String ciudad, double presupuesto) {
+    public Equipos(String nombre, String palamares, String ciudad, double presupuesto) {
         this.nombre = nombre;
         this.palamares = palamares;
         this.ciudad = ciudad;
@@ -25,11 +25,11 @@ public class Equipos {
         this.nombre = nombre;
     }
 
-    public int getPalamares() {
+    public String getPalamares() {
         return palamares;
     }
 
-    public void setPalamares(int palamares) {
+    public void setPalamares(String palamares) {
         this.palamares = palamares;
     }
 

@@ -61,7 +61,7 @@ public class Lab3_JasonDeras_MiguelBlanco {
                             System.out.print("Ingrese su el nombre del equipo: ");
                             String nomequipo = leer.next();
                             System.out.print("Ingrese Palmares: ");
-                            int palmares = leer.nextInt();
+                            String palmares = leer.next();
                             System.out.print("Ingrese Ciudad: ");
                             String ciudad = leer.next();
                             System.out.print("Ingrese presupuesto: ");
