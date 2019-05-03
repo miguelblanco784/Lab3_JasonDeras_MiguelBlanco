@@ -41,7 +41,6 @@ public class Lab3_JasonDeras_MiguelBlanco {
                             }
                             System.out.print("Ingrese la posicion del jugador a comprar: ");
                             int temp8 = leer.nextInt();
-
                             if ((jugadoress.get(temp8).getPrecio() > equipos.get(temp7).getPresupuesto()) && jugadoress.get(temp8).getEquipo().equals("Libre")) {
                                 System.out.println("No lo puede comprar\n");
                             } else if ((jugadoress.get(temp8).getPrecio() < equipos.get(temp7).getPresupuesto()) && jugadoress.get(temp8).getEquipo().equals("Libre")) {
@@ -49,19 +48,26 @@ public class Lab3_JasonDeras_MiguelBlanco {
                                 System.out.print("Ingrese el numero del jugador: ");
                                 int num = leer.nextInt();
                                 axu = (int) (equipos.get(temp7).getPresupuesto() - jugadoress.get(temp8).getPrecio());
-                                jugadoress.get(temp8).setNumero(num);
-                                jugadoress.remove(temp8);
-                                equipos.get(temp7).setPresupuesto(axu);
-                                System.out.println("");
+                                if (jugadoress.get(temp8).getNumero() == num) {
+                                    System.out.println("Un jugador ya tiene ese numero\n");
+                                } else {
+                                    jugadoress.remove(temp8);
+                                    equipos.get(temp7).setPresupuesto(axu);
+                                    System.out.println("");
+                                }
                             } else if ((jugadoress.get(temp8).getPrecio() == equipos.get(temp7).getPresupuesto()) && jugadoress.get(temp8).getEquipo().equals("Libre")) {
                                 int axu;
                                 System.out.print("Ingrese el numero del jugador: ");
                                 int num = leer.nextInt();
                                 axu = (int) (equipos.get(temp8).getPresupuesto() - jugadoress.get(temp8).getPrecio());
                                 equipos.get(temp7).setPresupuesto(axu);
-                                jugadoress.get(temp8).setNumero(num);
-                                jugadoress.remove(temp8);
-                                System.out.println("");
+                                if (jugadoress.get(temp8).getNumero() == num) {
+                                    System.out.println("Un jugador ya tiene ese numero\n");
+                                } else {
+                                    jugadoress.remove(temp8);
+                                    equipos.get(temp7).setPresupuesto(axu);
+                                    System.out.println("");
+                                }
                             }
                             System.out.println("");
                             break;
@@ -119,7 +125,7 @@ public class Lab3_JasonDeras_MiguelBlanco {
                                     System.out.println("Ingrese sus delanteros: ");
                                     for (int p = 0; p < opcion11; p++, i++) {
                                         System.out.println("Ingrese el delantero -" + i);
-                                        
+
                                     }
                                     System.out.println("Ingrese sus Medio: ");
                                     for (int k = 0; k < opcion22; k++, i++) {
