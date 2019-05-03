@@ -215,8 +215,8 @@ public class Lab3_JasonDeras_MiguelBlanco {
                                     break;
                                 case 8:
                                     if (pos >= 0 && pos < jugadoress.size()) {
-                                        System.out.print("Ingrese nuevo equipo: ");
-                                        equipo = leer.next();
+                                        System.out.println("Para modificar el equipo del jugador debe de ir al menu de modificar equipo\n");
+                                        System.out.println("");
                                     }
                                     System.out.println("");
                                     break;
