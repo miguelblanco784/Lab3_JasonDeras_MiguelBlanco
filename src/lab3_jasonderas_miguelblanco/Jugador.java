@@ -10,15 +10,19 @@ public class Jugador {
     private int numero = 0;
     private double precio;
     private String equipo = "";
+    private String posicion;
 
-    public Jugador(String nombre, String apellido, int edad, String estado, String pais_nacimiento, double precio) {
+    public Jugador(String nombre, String apellido, int edad, String estado, String pais_nacimiento, double precio, String posicion) {
         this.nombre = nombre;
         this.apellido = apellido;
         this.edad = edad;
         this.estado = estado;
         this.pais_nacimiento = pais_nacimiento;
         this.precio = precio;
+        this.posicion = posicion;
     }
+
+   
 
     public String getNombre() {
         return nombre;
@@ -86,8 +90,8 @@ public class Jugador {
 
     @Override
     public String toString() {
-        return "Jugador{" + "apellido=" + apellido + ", estado=" + estado + ", pais_nacimiento=" + pais_nacimiento + ", numero=" + numero + ", precio=" + precio + '}';
+        return "Jugador{" + "apellido=" + apellido + ", estado=" + estado + ", pais_nacimiento=" + pais_nacimiento + ", numero=" + numero + ", equipo=" + equipo + ", posicion=" + posicion + '}';
     }
 
-    
+ 
 }
