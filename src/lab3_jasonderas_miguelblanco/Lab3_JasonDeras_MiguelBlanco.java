@@ -77,7 +77,51 @@ public class Lab3_JasonDeras_MiguelBlanco {
                             System.out.print("Ingrese el precio del jugador: ");
                             int precio = leer.nextInt();
                             String equipo = "";
-                            System.out.print("1. Delantero: ");
+                            System.out.print("1. Delantero\n"
+                                    + "2. Medio\n"
+                                    + "3. Defensa\n"
+                                    + "4. Portero\n"
+                                    + "Ingrese su opcion: ");
+                            int temp4 = leer.nextInt();
+                            switch (temp4) {
+                                case 1:
+                                    System.out.print("Ingrese Nivel de Definicion: ");
+                                    int definicion = leer.nextInt();
+                                    System.out.print("Ingrese la Velociodad: ");
+                                    int velocidad = leer.nextInt();
+                                    System.out.print("Ingrese el promedio de goles por partidos: ");
+                                    double promedio = leer.nextDouble();
+                                    jugadoress.add(new Delantero(definicion, velocidad, promedio, nombre, apellido, edad, estado, paisnam, pie, numero, precio, equipo));
+                                    break;
+                                case 2:
+                                    System.out.print("Ingrese creatividad: ");
+                                    int creatividad = leer.nextInt();
+                                    System.out.print("Ingrese dominio: ");
+                                    int dominio = leer.nextInt();
+                                    System.out.print("Ingrese asistencia: ");
+                                    int asistencia = leer.nextInt();
+                                    jugadoress.add(new Medio(creatividad, dominio, asistencia, nombre, apellido, edad, estado, paisnam, pie, numero, precio, equipo));
+                                    break;
+                                case 3:
+                                    System.out.print("Ingrese agresividad: ");
+                                    int agresividad = leer.nextInt();
+                                    System.out.print("Ingrese el peso: ");
+                                    int peso = leer.nextInt();
+                                    System.out.print("Ingrese velocidad: ");
+                                    int velo = leer.nextInt();
+                                    jugadoress.add(new Defensa(agresividad, peso, velo, nombre, apellido, edad, estado, paisnam, pie, numero, precio, equipo));
+                                    break;
+                                case 4:
+                                    System.out.print("Ingrese portero: ");
+                                    int areo = leer.nextInt();
+                                    System.out.println("Ingrese del nivel de juego: ");
+                                    int njuego = leer.nextInt();
+                                    jugadoress.add(new Portero(areo, njuego, nombre, apellido, edad, estado, paisnam, pie, numero, precio, equipo));
+                                    break;
+                                default:
+                                    throw new AssertionError();
+                            }
+
                             break;
                         case 2:
                             break;
