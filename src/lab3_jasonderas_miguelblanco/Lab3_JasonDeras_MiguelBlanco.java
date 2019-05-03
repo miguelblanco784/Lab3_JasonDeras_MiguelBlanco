@@ -4,12 +4,12 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Lab3_JasonDeras_MiguelBlanco {
-
+    
     static Scanner leer = new Scanner(System.in);
     static ArrayList<Jugador> jugadoress = new ArrayList();
     static ArrayList<Equipos> equipos = new ArrayList();
     static ArrayList Titulares = new ArrayList();
-
+    
     public static void main(String[] args) {
         while (true) {
             System.out.print("1. Equipo\n"
@@ -31,7 +31,7 @@ public class Lab3_JasonDeras_MiguelBlanco {
                             for (int i = 0; i < equipos.size(); i++) {
                                 System.out.println(i + 1 + "- " + equipos.get(i));
                             }
-
+                            
                             System.out.print("Ingrese posicion del equipo a comprar: ");
                             int temp7 = leer.nextInt() - 1;
                             for (int i = 0; i < jugadoress.size(); i++) {
@@ -125,7 +125,6 @@ public class Lab3_JasonDeras_MiguelBlanco {
                                     System.out.println("Ingrese sus delanteros: ");
                                     for (int p = 0; p < opcion11; p++, i++) {
                                         System.out.println("Ingrese el delantero -" + i);
-
                                     }
                                     System.out.println("Ingrese sus Medio: ");
                                     for (int k = 0; k < opcion22; k++, i++) {
@@ -136,12 +135,15 @@ public class Lab3_JasonDeras_MiguelBlanco {
                                         System.out.println("Ingrese sus Defensas -" + i);
                                     }
                                 }
-
                                 Titulares.add(jugadoress);
                             }// fin if validacion 
                             break;
                         case 3:
-
+                            System.out.print("Ingrese posicion del equipo: ");
+                            int temp11 = leer.nextInt();
+                            if (temp11 >= 0 && temp11 < equipos.size()) {
+                                System.out.println(equipos.get(temp11));
+                            }
                             break;
                         case 4:
                             System.out.println("Jugadores en equipos: ");
