@@ -7,6 +7,7 @@ public class Lab3_JasonDeras_MiguelBlanco {
 
     static Scanner leer = new Scanner(System.in);
     static ArrayList<Jugador> jugadoress = new ArrayList();
+    static ArrayList<Equipos> equipos = new ArrayList();
 
     public static void main(String[] args) {
         while (true) {
@@ -21,6 +22,7 @@ public class Lab3_JasonDeras_MiguelBlanco {
                             + "3. Listar Equipos\n"
                             + "4. Listar Jugadores\n"
                             + "5. Eliminar Equipo\n"
+                            + "6. Crear equipo\n"
                             + "Ingrese su opcion: ");
                     int temp1 = leer.nextInt();
                     switch (temp1) {
@@ -44,9 +46,6 @@ public class Lab3_JasonDeras_MiguelBlanco {
                     }
                     break;
                 case 2:
-                    for (int i = 0; i < jugadoress.size(); i++) {
-                        System.out.println(i + 1 + "- " + jugadoress.get(i));
-                    }
                     System.out.println("1. Crear\n"
                             + "2. Modificar\n"
                             + "3. Eliminar\n"
@@ -121,9 +120,99 @@ public class Lab3_JasonDeras_MiguelBlanco {
                                 default:
                                     throw new AssertionError();
                             }
-
                             break;
                         case 2:
+                            System.out.println("Menu de modificacion de jugadores\n");
+                            System.out.println("1. Nombre");
+                            System.out.println("2. Apellido");
+                            System.out.println("3. Edad");
+                            System.out.println("4. Estado");
+                            System.out.println("5. Pais de nacimeinto");
+                            System.out.println("6. Pie preferido");
+                            System.out.println("7. Precio");
+                            System.out.println("8. Equipo");
+                            System.out.print("Ingrese posicion del jugador a modificar: ");
+                            int pos = leer.nextInt();
+                            System.out.print("Ingrese una opcion: ");
+                            int temp5 = leer.nextInt();
+                            switch (temp5) {
+                                case 1:
+                                    if (pos >= 0 && pos < jugadoress.size()) {
+                                        System.out.print("Ingrese nuevo nombre: ");
+                                        nombre = leer.next();
+                                        jugadoress.get(pos).setNombre(nombre);
+                                    }
+                                    System.out.println("");
+                                    break;
+                                case 2:
+                                    if (pos >= 0 && pos < jugadoress.size()) {
+                                        System.out.print("Ingrese nuevo apellido: ");
+                                        apellido = leer.next();
+                                        jugadoress.get(pos).setNombre(apellido);
+                                    }
+                                    System.out.println("");
+                                    break;
+                                case 3:
+                                    if (pos >= 0 && pos < jugadoress.size()) {
+                                        System.out.print("Ingrese nueva edad: ");
+                                        edad = leer.nextInt();
+                                        jugadoress.get(pos).setEdad(edad);
+                                    }
+                                    System.out.println("");
+                                    break;
+                                case 4:
+                                    if (pos >= 0 && pos < jugadoress.size()) {
+                                        if (jugadoress.get(pos).getEstado().equalsIgnoreCase("libre")) {
+                                            System.out.println("Ingrese posicion del equipo que lo quiere comprar: ");
+                                            int pos2 = leer.nextInt();
+                                            if (pos2 >= 0 && pos2 < equipos.size()) {
+                                                equipos.get(pos2).setJugador(jugadoress.get(pos));
+                                                jugadoress.remove(pos);
+                                            } else {
+                                                System.out.println("Posicion de eqipo no valido\n");
+                                                System.out.println("");
+                                            }//If auxiliar de la compra de jugadores
+                                        } else if (jugadoress.get(pos).getEstado().equalsIgnoreCase("Comprado")) {
+                                            jugadoress.get(pos).setEstado("Libre");
+                                        }
+                                    }
+                                    System.out.println("");
+                                    break;
+                                case 5:
+                                    if (pos >= 0 && pos < jugadoress.size()) {
+                                        System.out.print("Ingrese nuevo pais de nacimiento: ");
+                                        paisnam = leer.next();
+                                        jugadoress.get(pos).setPais_nacimiento(paisnam);
+                                    }
+                                    System.out.println("");
+                                    break;
+                                case 6:
+                                    if (pos >= 0 && pos < jugadoress.size()) {
+                                        System.out.print("Ingrese nuevo pie preferido: ");
+                                        pie = leer.next();
+                                        jugadoress.get(pos).setNombre(pie);
+                                    }
+                                    System.out.println("");
+                                    break;
+                                case 7:
+                                    if (pos >= 0 && pos < jugadoress.size()) {
+                                        System.out.print("Ingrese nuevo precio: ");
+                                        precio = leer.nextInt();
+                                        jugadoress.get(pos).setPrecio(precio);
+                                    }
+                                    System.out.println("");
+                                    break;
+                                case 8:
+                                    if (pos >= 0 && pos < jugadoress.size()) {
+                                        System.out.print("Ingrese nuevo equipo: ");
+                                        equipo = leer.next();
+                                    }
+                                    System.out.println("");
+                                    break;
+                                default:
+                                    System.out.println("Opcion de modificacion no valida\n");
+                                    System.out.println("");
+                            }//Fin del switch de modificacion de jugador
                             break;
                         case 3:
                             System.out.print("Ingrese que jugador dese eliminar: ");
@@ -136,7 +225,7 @@ public class Lab3_JasonDeras_MiguelBlanco {
                     break;
                 default:
                     throw new AssertionError();
-            }
+            }//Fin del case de los jugadores o equipos
         }
     }
 }
