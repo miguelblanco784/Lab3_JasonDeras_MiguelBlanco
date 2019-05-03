@@ -45,12 +45,22 @@ public class Lab3_JasonDeras_MiguelBlanco {
                                 System.out.println("No lo puede comprar\n");
                             } else if ((jugadoress.get(temp8).getPrecio() < equipos.get(temp7).getPresupuesto()) && jugadoress.get(temp8).getEquipo().equals("Libre")) {
                                 int axu;
+                                System.out.print("Ingrese el numero del jugador: ");
+                                int num = leer.nextInt();
                                 axu = (int) (equipos.get(temp7).getPresupuesto() - jugadoress.get(temp8).getPrecio());
+                                jugadoress.get(temp8).setNumero(num);
+                                jugadoress.remove(temp8);
                                 equipos.get(temp7).setPresupuesto(axu);
+                                System.out.println("");
                             } else if ((jugadoress.get(temp8).getPrecio() == equipos.get(temp7).getPresupuesto()) && jugadoress.get(temp8).getEquipo().equals("Libre")) {
                                 int axu;
+                                System.out.print("Ingrese el numero del jugador: ");
+                                int num = leer.nextInt();
                                 axu = (int) (equipos.get(temp8).getPresupuesto() - jugadoress.get(temp8).getPrecio());
                                 equipos.get(temp7).setPresupuesto(axu);
+                                jugadoress.get(temp8).setNumero(num);
+                                jugadoress.remove(temp8);
+                                System.out.println("");
                             }
                             System.out.println("");
                             break;
