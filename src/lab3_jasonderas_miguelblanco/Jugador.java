@@ -7,22 +7,24 @@ public class Jugador {
     private int edad;
     private String estado;
     private String pais_nacimiento;
-    private int numero = 0;
+    private String pie_preferido;
+    private int numero;
     private double precio;
     private String equipo = "";
     private String posicion;
 
-    public Jugador(String nombre, String apellido, int edad, String estado, String pais_nacimiento, double precio, String posicion) {
+    public Jugador(String nombre, String apellido, int edad, String estado, String pais_nacimiento, String pie_preferido, int numero, double precio, String posicion) {
         this.nombre = nombre;
         this.apellido = apellido;
         this.edad = edad;
         this.estado = estado;
         this.pais_nacimiento = pais_nacimiento;
+        this.pie_preferido = pie_preferido;
+        this.numero = numero;
         this.precio = precio;
         this.posicion = posicion;
     }
 
-   
 
     public String getNombre() {
         return nombre;
@@ -64,6 +66,22 @@ public class Jugador {
         this.pais_nacimiento = pais_nacimiento;
     }
 
+    public String getPie_preferido() {
+        return pie_preferido;
+    }
+
+    public void setPie_preferido(String pie_preferido) {
+        this.pie_preferido = pie_preferido;
+    }
+
+    public String getPosicion() {
+        return posicion;
+    }
+
+    public void setPosicion(String posicion) {
+        this.posicion = posicion;
+    }
+
     public int getNumero() {
         return numero;
     }
@@ -90,8 +108,7 @@ public class Jugador {
 
     @Override
     public String toString() {
-        return "Jugador{" + "apellido=" + apellido + ", estado=" + estado + ", pais_nacimiento=" + pais_nacimiento + ", numero=" + numero + ", equipo=" + equipo + ", posicion=" + posicion + '}';
+        return "Jugador{" + "apellido=" + apellido + ", estado=" + estado + ", pie_preferido=" + pie_preferido + ", numero=" + numero + ", posicion=" + posicion + '}';
     }
 
- 
 }
