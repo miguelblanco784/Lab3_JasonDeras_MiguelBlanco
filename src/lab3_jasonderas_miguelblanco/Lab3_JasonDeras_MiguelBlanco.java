@@ -185,8 +185,10 @@ public class Lab3_JasonDeras_MiguelBlanco {
                         }
                         System.out.println("");
                         System.out.println("Los jugadores suplentes");
-                        for (int i = 0; i < su; i++) {
-
+                        for (int i = 0; i < jugadoress.size(); i++) {
+                            if (jugadoress.get(i).getTitularidad().equalsIgnoreCase("suplente")) {
+                                System.out.println(jugadoress.get(i));
+                            }
                         }
                     }
                     break;
@@ -227,6 +229,7 @@ public class Lab3_JasonDeras_MiguelBlanco {
                     throw new AssertionError();
             }
             break;
+
         
     
 
