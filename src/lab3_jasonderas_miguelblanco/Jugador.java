@@ -12,6 +12,7 @@ public class Jugador {
     private double precio;
     private String equipo = "";
     private String posicion;
+    private String titularidad = "Banca";
 
     public Jugador(String nombre, String apellido, int edad, String estado, String pais_nacimiento, String pie_preferido, int numero, double precio, String posicion) {
         this.nombre = nombre;
@@ -24,7 +25,6 @@ public class Jugador {
         this.precio = precio;
         this.posicion = posicion;
     }
-
 
     public String getNombre() {
         return nombre;
@@ -104,6 +104,14 @@ public class Jugador {
 
     public void setEquipo(String equipo) {
         this.equipo = equipo;
+    }
+
+    public String getTitularidad() {
+        return titularidad;
+    }
+
+    public void setTitularidad(String titularidad) {
+        this.titularidad = titularidad;
     }
 
     @Override
