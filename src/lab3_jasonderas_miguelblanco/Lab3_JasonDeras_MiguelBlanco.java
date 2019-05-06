@@ -35,15 +35,15 @@ public class Lab3_JasonDeras_MiguelBlanco {
                             System.out.print("Ingrese posicion del equipo a comprar: ");
                             int temp7 = leer.nextInt() - 1;
                             for (int i = 0; i < jugadoress.size(); i++) {
-                                if (jugadoress.get(i).getEquipo().equals("Libre")) {
+                                if (jugadoress.get(i).getEstado().equals("Libre")) {
                                     System.out.println(i + "= " + jugadoress.get(i));
                                 }
                             }
                             System.out.print("Ingrese la posicion del jugador a comprar: ");
                             int temp8 = leer.nextInt();
-                            if ((jugadoress.get(temp8).getPrecio() > equipos.get(temp7).getPresupuesto()) && jugadoress.get(temp8).getEquipo().equals("Libre")) {
+                            if ((jugadoress.get(temp8).getPrecio() > equipos.get(temp7).getPresupuesto()) && jugadoress.get(temp8).getEstado().equals("Libre")) {
                                 System.out.println("No lo puede comprar\n");
-                            } else if ((jugadoress.get(temp8).getPrecio() < equipos.get(temp7).getPresupuesto()) && jugadoress.get(temp8).getEquipo().equals("Libre")) {
+                            } else if ((jugadoress.get(temp8).getPrecio() < equipos.get(temp7).getPresupuesto()) && jugadoress.get(temp8).getEstado().equals("Libre")) {
                                 int axu;
                                 System.out.print("Ingrese el numero del jugador: ");
                                 int num = leer.nextInt();
@@ -55,7 +55,7 @@ public class Lab3_JasonDeras_MiguelBlanco {
                                     equipos.get(temp7).setPresupuesto(axu);
                                     System.out.println("");
                                 }
-                            } else if ((jugadoress.get(temp8).getPrecio() == equipos.get(temp7).getPresupuesto()) && jugadoress.get(temp8).getEquipo().equals("Libre")) {
+                            } else if ((jugadoress.get(temp8).getPrecio() == equipos.get(temp7).getPresupuesto()) && jugadoress.get(temp8).getEstado().equals("Libre")) {
                                 int axu;
                                 System.out.print("Ingrese el numero del jugador: ");
                                 int num = leer.nextInt();
@@ -70,170 +70,163 @@ public class Lab3_JasonDeras_MiguelBlanco {
                                 }
                             }
                             System.out.println("");
-
-                    }
-                    break;
-                case 2:
-                    System.out.println("Impresion de Jugadores: ");
-                    for (int i = 0; i < equipos.size(); i++) {
-                        System.out.println(i + "- ");
-                        for (int j = 0; j < equipos.get(i).getJugadores().size(); j++) {
-                            System.out.println(equipos.get(i).getNombre() + "- " + equipos.get(i).getJugadores().get(j));
-                        }
-
-                    }
-                    System.out.print("Ingrese el equipo: ");
-                    int temp12 = leer.nextInt();
-                    System.out.println("Ingrese su formacion: "
-                            + "Ejemplo: defensas,medios,delanteros");
-                    String temp9 = leer.next();
-                    String[] formacion = temp9.split(",");
-                    int opcion11 = Integer.parseInt(formacion[2]),
-                     opcion22 = Integer.parseInt(formacion[1]),
-                     opcion33 = Integer.parseInt(formacion[0]);
-                    int opcion1 = 0,
-                     opcion2 = 0,
-                     opcion3 = 0;
-
-                    for (int i = 0; i < equipos.size(); i++) {
-                        if (equipos.get(temp12).getJugadores().get(i) instanceof Delantero) {
-                            opcion1++;
-                        }
-                    }
-                    for (int i = 0; i < equipos.size(); i++) {
-                        if (equipos.get(temp12).getJugadores().get(i) instanceof Medio) {
-                            opcion2++;
-                        }
-                    }
-                    for (int i = 0; i < equipos.size(); i++) {
-                        if (equipos.get(temp12).getJugadores().get(i) instanceof Defensa) {
-                            opcion3++;
-                        }
-                    }
-                    if ((opcion11 >= opcion1) && (opcion22 >= opcion2) && (opcion33 >= opcion3) && (opcion11 + opcion22 + opcion33 == 10)) {
-                        System.out.println("Delanteros: ");
-                        for (int i = 0; i < equipos.size(); i++) {
-                            while (equipos.get(temp12).getJugadores().get(i) instanceof Delantero) {
-                                System.out.println(i + "_ " + equipos.size());
-                            }
-                        }
-                        System.out.println("Medios: ");
-                        for (int i = 0; i < equipos.size(); i++) {
-                            if (equipos.get(temp12).getJugadores().get(i) instanceof Medio) {
-                                System.out.println(i + "_ " + equipos.size());
-                            }
-                        }
-                        System.out.println("Defensa ");
-                        for (int i = 0; i < equipos.size(); i++) {
-                            if (equipos.get(temp12).getJugadores().get(i) instanceof Defensa) {
-                                System.out.println(i + "_ " + equipos.size());
-                            }
-                        }
-                        System.out.print("Ingrese su portero: ");
-                        int temp15 = leer.nextInt();
-                        equipos.get(temp12).getJugadores().get(temp15).setTitularidad("Titular");
-                        while (equipos.get(temp12).getJugadores().get(temp15) instanceof Delantero == false) {
-                            temp15 = leer.nextInt();
-                            equipos.get(temp12).getJugadores().get(temp15).setTitularidad("Titular");
-                        }
-                        for (int i = 0; i < 10; i++) {
-                            System.out.println("Ingrese sus delanteros: ");
-                            for (int p = 0; p < opcion11; p++, i++) {
-                                System.out.println("Ingrese el delantero -" + p);
-                                int temp14 = leer.nextInt();
-                                equipos.get(temp12).getJugadores().get(temp14).setTitularidad("Titular");
-                                while (equipos.get(temp12).getJugadores().get(temp14) instanceof Delantero == false) {
-                                    System.out.println("Ingrese el delantero -" + p);
-                                    temp14 = leer.nextInt();
-                                    equipos.get(temp12).getJugadores().get(temp14).setTitularidad("Titular");
+                            break;
+                        case 2:
+                            System.out.println("Impresion de Jugadores: ");
+                            for (int i = 0; i < equipos.size(); i++) {
+                                System.out.println(i + "- ");
+                                for (int j = 0; j < equipos.get(i).getJugadores().size(); j++) {
+                                    System.out.println(equipos.get(i).getNombre() + "- " + equipos.get(i).getJugadores().get(j));
                                 }
-                            }//fin delanteros
-                            System.out.println("Ingrese sus Medio: ");
-                            for (int k = 0; k < opcion22; k++, i++) {
-                                System.out.println("Ingrese sus Medio -" + i);
-                                int temp14 = leer.nextInt();
-                                equipos.get(temp12).getJugadores().get(temp14).setTitularidad("Titular");
-                                while (equipos.get(temp12).getJugadores().get(temp14) instanceof Medio == false) {
-                                    System.out.println("Ingrese sus Medio -" + i);
-                                    temp14 = leer.nextInt();
-                                    equipos.get(temp12).getJugadores().get(temp14).setTitularidad("Titular");
-                                }
-                            }//fin medio
-                            System.out.println("Ingrese Defensa: ");
-                            for (int z = 0; z < opcion33; z++, i++) {
-                                System.out.println("Ingrese sus Defensas -" + i);
-                                int temp14 = leer.nextInt();
-                                equipos.get(temp12).getJugadores().get(temp14).setTitularidad("Titular");
-                                while (equipos.get(temp12).getJugadores().get(temp14) instanceof Defensa == false) {
-                                    System.out.println("Ingrese sus Defensas -" + i);
-                                    temp14 = leer.nextInt();
-                                    equipos.get(temp12).getJugadores().get(temp14).setTitularidad("Titular");
-                                }
-                            }//fin defensa
-                        }//fin for
-                        Titulares.add(jugadoress);
-                    }// fin if validacion 
-                    break;
-                case 3:
-                    System.out.print("Ingrese posicion del equipo: ");
-                    int temp11 = leer.nextInt();
-                    if (temp11 >= 0 && temp11 < equipos.size()) {
-                        System.out.println(equipos.get(temp11));
-                        System.out.println("Jugadores titulades");
-                        for (int i = 0; i < Titulares.size(); i++) {
-                            System.out.println(Titulares.get(i));
-                        }
-                        System.out.println("");
-                        System.out.println("Los jugadores suplentes");
-                        for (int i = 0; i < jugadoress.size(); i++) {
-                            if (jugadoress.get(i).getTitularidad().equalsIgnoreCase("suplente")) {
-                                System.out.println(jugadoress.get(i));
+
                             }
-                        }
-                    }
-                    break;
-                case 4:
-                    System.out.println("Jugadores en equipos: ");
-                    for (int i = 0; i < jugadoress.size(); i++) {
-                        if (jugadoress.get(i).getEquipo().equals("Comprado")) {
-                            System.out.println(jugadoress.get(i));
-                        }
-                    }
-                    System.out.println("Jugadores sin equipo: ");
-                    for (int i = 0; i < jugadoress.size(); i++) {
-                        if (jugadoress.get(i).getEquipo().equals("Libre")) {
-                            System.out.println(jugadoress.get(i));
-                        }
-                    }
-                    break;
-                case 5:
-                    for (int i = 0; i < equipos.size(); i++) {
-                        System.out.print(i + 1 + "- " + equipos.get(i));
-                    }
-                    System.out.print("Ingrese el equipo que desea eliminiar: ");
-                    int temp6 = leer.nextInt() - 1;
-                    equipos.remove(temp6);
-                    break;
-                case 6:
-                    System.out.print("Ingrese su el nombre del equipo: ");
-                    String nomequipo = leer.next();
-                    System.out.print("Ingrese Palmares: ");
-                    String palmares = leer.next();
-                    System.out.print("Ingrese Ciudad: ");
-                    String ciudad = leer.next();
-                    System.out.print("Ingrese presupuesto: ");
-                    double presupuesto = leer.nextInt();
-                    equipos.add(new Equipos(nomequipo, palmares, ciudad, presupuesto));
-                    break;
-                default:
-                    throw new AssertionError();
-            }
-            break;
+                            System.out.print("Ingrese el equipo: ");
+                            int temp12 = leer.nextInt();
+                            System.out.println("Ingrese su formacion: "
+                                    + "Ejemplo: defensas,medios,delanteros");
+                            String temp9 = leer.next();
+                            String[] formacion = temp9.split(",");
+                            int opcion11 = Integer.parseInt(formacion[2]),
+                             opcion22 = Integer.parseInt(formacion[1]),
+                             opcion33 = Integer.parseInt(formacion[0]);
+                            int opcion1 = 0,
+                             opcion2 = 0,
+                             opcion3 = 0;
 
-        
-    
-
-case 2:
+                            for (int i = 0; i < equipos.size(); i++) {
+                                if (equipos.get(temp12).getJugadores().get(i) instanceof Delantero) {
+                                    opcion1++;
+                                }
+                            }
+                            for (int i = 0; i < equipos.size(); i++) {
+                                if (equipos.get(temp12).getJugadores().get(i) instanceof Medio) {
+                                    opcion2++;
+                                }
+                            }
+                            for (int i = 0; i < equipos.size(); i++) {
+                                if (equipos.get(temp12).getJugadores().get(i) instanceof Defensa) {
+                                    opcion3++;
+                                }
+                            }
+                            if ((opcion11 >= opcion1) && (opcion22 >= opcion2) && (opcion33 >= opcion3) && (opcion11 + opcion22 + opcion33 == 10)) {
+                                System.out.println("Delanteros: ");
+                                for (int i = 0; i < equipos.size(); i++) {
+                                    while (equipos.get(temp12).getJugadores().get(i) instanceof Delantero) {
+                                        System.out.println(i + "_ " + equipos.size());
+                                    }
+                                }
+                                System.out.println("Medios: ");
+                                for (int i = 0; i < equipos.size(); i++) {
+                                    if (equipos.get(temp12).getJugadores().get(i) instanceof Medio) {
+                                        System.out.println(i + "_ " + equipos.size());
+                                    }
+                                }
+                                System.out.println("Defensa ");
+                                for (int i = 0; i < equipos.size(); i++) {
+                                    if (equipos.get(temp12).getJugadores().get(i) instanceof Defensa) {
+                                        System.out.println(i + "_ " + equipos.size());
+                                    }
+                                }
+                                System.out.print("Ingrese su portero: ");
+                                int temp15 = leer.nextInt();
+                                equipos.get(temp12).getJugadores().get(temp15).setTitularidad("Titular");
+                                while (equipos.get(temp12).getJugadores().get(temp15) instanceof Delantero == false) {
+                                    temp15 = leer.nextInt();
+                                    equipos.get(temp12).getJugadores().get(temp15).setTitularidad("Titular");
+                                }
+                                for (int i = 0; i < 10; i++) {
+                                    System.out.println("Ingrese sus delanteros: ");
+                                    for (int p = 0; p < opcion11; p++, i++) {
+                                        System.out.println("Ingrese el delantero -" + p);
+                                        int temp14 = leer.nextInt();
+                                        equipos.get(temp12).getJugadores().get(temp14).setTitularidad("Titular");
+                                        while (equipos.get(temp12).getJugadores().get(temp14) instanceof Delantero == false) {
+                                            System.out.println("Ingrese el delantero -" + p);
+                                            temp14 = leer.nextInt();
+                                            equipos.get(temp12).getJugadores().get(temp14).setTitularidad("Titular");
+                                        }
+                                    }//fin delanteros
+                                    System.out.println("Ingrese sus Medio: ");
+                                    for (int k = 0; k < opcion22; k++, i++) {
+                                        System.out.println("Ingrese sus Medio -" + i);
+                                        int temp14 = leer.nextInt();
+                                        equipos.get(temp12).getJugadores().get(temp14).setTitularidad("Titular");
+                                        while (equipos.get(temp12).getJugadores().get(temp14) instanceof Medio == false) {
+                                            System.out.println("Ingrese sus Medio -" + i);
+                                            temp14 = leer.nextInt();
+                                            equipos.get(temp12).getJugadores().get(temp14).setTitularidad("Titular");
+                                        }
+                                    }//fin medio
+                                    System.out.println("Ingrese Defensa: ");
+                                    for (int z = 0; z < opcion33; z++, i++) {
+                                        System.out.println("Ingrese sus Defensas -" + i);
+                                        int temp14 = leer.nextInt();
+                                        equipos.get(temp12).getJugadores().get(temp14).setTitularidad("Titular");
+                                        while (equipos.get(temp12).getJugadores().get(temp14) instanceof Defensa == false) {
+                                            System.out.println("Ingrese sus Defensas -" + i);
+                                            temp14 = leer.nextInt();
+                                            equipos.get(temp12).getJugadores().get(temp14).setTitularidad("Titular");
+                                        }
+                                    }//fin defensa
+                                }//fin for
+                                Titulares.add(jugadoress);
+                            }// fin if validacion 
+                            break;
+                        case 3:
+                            System.out.print("Ingrese posicion del equipo: ");
+                            int temp11 = leer.nextInt();
+                            if (temp11 >= 0 && temp11 < equipos.size()) {
+                                System.out.println(equipos.get(temp11));
+                                System.out.println("Jugadores titulades");
+                                for (int i = 0; i < Titulares.size(); i++) {
+                                    System.out.println(Titulares.get(i));
+                                }
+                                System.out.println("");
+                                System.out.println("Los jugadores suplentes");
+                                for (int i = 0; i < jugadoress.size(); i++) {
+                                    if (jugadoress.get(i).getTitularidad().equalsIgnoreCase("suplente")) {
+                                        System.out.println(jugadoress.get(i));
+                                    }
+                                }
+                            }
+                            break;
+                        case 4:
+                            System.out.println("Jugadores en equipos: ");
+                            for (int i = 0; i < jugadoress.size(); i++) {
+                                if (jugadoress.get(i).getEstado().equals("Comprado")) {
+                                    System.out.println(jugadoress.get(i));
+                                }
+                            }
+                            System.out.println("Jugadores sin equipo: ");
+                            for (int i = 0; i < jugadoress.size(); i++) {
+                                if (jugadoress.get(i).getEstado().equals("Libre")) {
+                                    System.out.println(jugadoress.get(i));
+                                }
+                            }
+                            break;
+                        case 5:
+                            for (int i = 0; i < equipos.size(); i++) {
+                                System.out.print(i + 1 + "- " + equipos.get(i));
+                            }
+                            System.out.print("Ingrese el equipo que desea eliminiar: ");
+                            int temp6 = leer.nextInt() - 1;
+                            equipos.remove(temp6);
+                            break;
+                        case 6:
+                            System.out.print("Ingrese su el nombre del equipo: ");
+                            String nomequipo = leer.next();
+                            System.out.print("Ingrese Palmares: ");
+                            String palmares = leer.next();
+                            System.out.print("Ingrese Ciudad: ");
+                            String ciudad = leer.next();
+                            System.out.print("Ingrese presupuesto: ");
+                            double presupuesto = leer.nextInt();
+                            equipos.add(new Equipos(nomequipo, palmares, ciudad, presupuesto));
+                            break;
+                        default:
+                            throw new AssertionError();
+                    }//fin case equipoo
+                case 2:// case jugador
                     System.out.println("1. Crear\n"
                             + "2. Modificar\n"
                             + "3. Eliminar\n"
@@ -412,10 +405,8 @@ case 2:
                             break;
                         default:
                             throw new AssertionError();
-                    }
-                    break;
-                default:
-                    throw new AssertionError();
-            }//Fin del case de los jugadores o equipos
-        }
+                    }//fin creacion jugadores
+            }//fin case opcion
+        }//Fin del case de los jugadores o equipos
     }
+}
