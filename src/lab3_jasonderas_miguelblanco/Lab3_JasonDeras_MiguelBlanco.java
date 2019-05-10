@@ -9,6 +9,7 @@ public class Lab3_JasonDeras_MiguelBlanco {
     static ArrayList<Jugador> jugadoress = new ArrayList();
     static ArrayList<Equipos> equipos = new ArrayList();
     static ArrayList Titulares = new ArrayList();
+    static String f = "";
 
     public static void main(String[] args) {
         while (true) {
